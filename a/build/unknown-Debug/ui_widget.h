@@ -11,6 +11,10 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCalendarWidget>
+#include <QtWidgets/QLCDNumber>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
@@ -23,6 +27,10 @@ public:
     QPushButton *upBtn;
     QPushButton *rightBtn;
     QPushButton *downBtn;
+    QLabel *label;
+    QLCDNumber *lcdNumber;
+    QProgressBar *progressBar;
+    QCalendarWidget *calendarWidget;
 
     void setupUi(QWidget *Widget)
     {
@@ -32,15 +40,39 @@ public:
         leftBtn = new QPushButton(Widget);
         leftBtn->setObjectName("leftBtn");
         leftBtn->setGeometry(QRect(240, 350, 91, 51));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("JetBrains Maple Mono")});
+        leftBtn->setFont(font);
         upBtn = new QPushButton(Widget);
         upBtn->setObjectName("upBtn");
         upBtn->setGeometry(QRect(330, 300, 91, 51));
+        upBtn->setFont(font);
         rightBtn = new QPushButton(Widget);
         rightBtn->setObjectName("rightBtn");
         rightBtn->setGeometry(QRect(420, 350, 91, 51));
+        rightBtn->setFont(font);
         downBtn = new QPushButton(Widget);
         downBtn->setObjectName("downBtn");
         downBtn->setGeometry(QRect(330, 400, 91, 51));
+        downBtn->setFont(font);
+        label = new QLabel(Widget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(440, 110, 241, 81));
+        label->setFrameShape(QFrame::Shape::Box);
+        label->setFrameShadow(QFrame::Shadow::Plain);
+        lcdNumber = new QLCDNumber(Widget);
+        lcdNumber->setObjectName("lcdNumber");
+        lcdNumber->setGeometry(QRect(190, 160, 191, 81));
+        lcdNumber->setFrameShadow(QFrame::Shadow::Plain);
+        progressBar = new QProgressBar(Widget);
+        progressBar->setObjectName("progressBar");
+        progressBar->setGeometry(QRect(447, 270, 241, 23));
+        progressBar->setValue(24);
+        progressBar->setOrientation(Qt::Orientation::Horizontal);
+        progressBar->setInvertedAppearance(false);
+        calendarWidget = new QCalendarWidget(Widget);
+        calendarWidget->setObjectName("calendarWidget");
+        calendarWidget->setGeometry(QRect(400, 380, 352, 190));
 
         retranslateUi(Widget);
 
@@ -54,6 +86,7 @@ public:
         upBtn->setText(QCoreApplication::translate("Widget", "up", nullptr));
         rightBtn->setText(QCoreApplication::translate("Widget", "right", nullptr));
         downBtn->setText(QCoreApplication::translate("Widget", "down", nullptr));
+        label->setText(QCoreApplication::translate("Widget", "TextLabel", nullptr));
     } // retranslateUi
 
 };

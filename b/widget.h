@@ -11,19 +11,17 @@ QT_END_NAMESPACE
 
 class Widget : public QWidget {
     Q_OBJECT
-   private:
-    enum DIRECT {
-        UP, DOWN, LEFT, RIGHT
-    };
 
    public:
     explicit Widget(QWidget* parent = nullptr);
     ~Widget() override;
 
-    void resizeEvent(QResizeEvent *event) override;
+   private slots:
+    void on_pushButton_pressed();
+
+    void on_lineEdit_textEdited(const QString &arg1);
 
    private:
     Ui::Widget* ui;
-    QTimer *timer;
 };
 #endif  // WIDGET_H
