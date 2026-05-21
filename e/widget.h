@@ -16,13 +16,6 @@ class Widget : public QWidget {
     explicit Widget(QWidget* parent = nullptr);
     ~Widget() override;
 
-   private slots:
-    void on_pushButton_pressed();
-
-    void on_lineEdit_textEdited(const QString &arg1);
-
-    void on_horizontalSlider_valueChanged(int value);
-
    private:
     Ui::Widget* ui;
 };

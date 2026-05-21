@@ -17,11 +17,9 @@ class Widget : public QWidget {
     ~Widget() override;
 
    private slots:
-    void on_pushButton_pressed();
+    void on_newRowBtn_clicked();
 
-    void on_lineEdit_textEdited(const QString &arg1);
-
-    void on_horizontalSlider_valueChanged(int value);
+    void on_newCowBtn_clicked();
 
    private:
     Ui::Widget* ui;
