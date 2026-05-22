@@ -20,6 +20,8 @@ void addAll(QMenu* menu, std::initializer_list<QObject*> items) {
             menu->addMenu(subMenu);
         } else if (auto action = qobject_cast<QAction*>(item)) {
             menu->addAction(action);
+        } else {
+            std::cout << "allAll: Unsupported QObject" << std::endl;
         }
     }
 }
@@ -28,7 +30,8 @@ MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
-    QMenuBar* menuBar = new QMenuBar();
+    // QMenuBar* menuBar = new QMenuBar();
+    QMenuBar* menuBar = this->menuBar();
     this->setMenuBar(menuBar);
 
     QMenu* menu1 = new QMenu("文件");

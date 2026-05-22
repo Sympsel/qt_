@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>保存.png</file>
+        <file>打开.png</file>
+    </qresource>
+</RCC>
