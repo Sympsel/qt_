@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>style.qss</file>
+        <file>蓝色扁平.qss</file>
+        <file>浅蓝色.qss</file>
+        <file>vscode.qss</file>
+        <file>vscode-light.qss</file>
+    </qresource>
+</RCC>
